@@ -1,0 +1,37 @@
+TTYPE1  = 'ggoid_hex'          / Hex string of Galex Global Object ID  
+TTYPE2  = 'ggoid_dec'          / Decimal string of Galex Global Object ID       
+TTYPE5  = 'tilenum '           / Tile number 
+TTYPE6  = 'type    '           / Obs.type (0=single,1=multi)                                                       
+TTYPE9  = 'img     '           / image number (exposure# for _visits)           
+TTYPE12 = 'id      '           / Merged ID.                                     
+TTYPE15 = 'alpha_j2000'        / Right Ascension(degrees).                                                                    
+TTYPE16 = 'delta_j2000'        / Declination (degrees). 
+TTYPE22 = 'E_bv    '           / E(B-V) Galactic Reddening.                     
+TTYPE23 = 'glon    '           / Galactic longitude in degrees.                                                                
+TTYPE24 = 'glat    '           / Galactic latitude in degrees.                  
+TTYPE25 = 'primary '           / Is AIS/MIS source a primary? (1/0)             
+TTYPE26 = 'fov_radius'         / distance from center of FOV in degrees         
+TTYPE36 = 'nuv_flux'           / NUV calibrated flux (micro Jansky)                                                           
+TTYPE37 = 'nuv_fluxerr'        / NUV calibrated flux error                                                                     
+TTYPE38 = 'nuv_mag '           / NUV calibrated magnitude                                                                     
+TTYPE39 = 'nuv_magerr'         / NUV calibrated magnitude error                                                                
+TTYPE40 = 'fuv_flux'           / FUV calibrated flux (micro Jansky)                                                          
+TTYPE41 = 'fuv_fluxerr'        / FUV calibrated flux error                                                                     
+TTYPE42 = 'fuv_mag '           / FUV calibrated magnitude                                                                     
+TTYPE43 = 'fuv_magerr'         / FUV calibrated magnitude error    
+TTYPE50 = 'fuv_ra_adj'         / FUV adjusted RA in degrees                     
+TTYPE51 = 'fuv_dec_adj'        / FUV adjusted DEC in degrees                    
+TTYPE53 = 'fuv_ncat_mag'       / FUV calibrated magnitude from -fd-ncat.fits    
+TTYPE56 = 'nuv_fcat_mag'       / NUV calibrated magnitude from -nd-fcat.fits    
+TTYPE54 = 'fuv_ncat_magerr'    / Error for nuv_fcat_mag                         
+TTYPE57 = 'nuv_fcat_magerr'    / Error for nuv_fcat_mag                                
+TTYPE106= 'cn_radius'          / Closest neighbor radius in arcseconds                                                         
+TTYPE107= 'cn_pa   '           / Closest neighbor position angle in degrees                                                    
+TTYPE108= 'cn_mag_nuv'         / Closest neighbor NUV magnitude                                                                
+TTYPE109= 'cn_mag_fuv'         / Closest neighbor FUV magnitude                 
+TTYPE114= 'nuv_int '           / NUV intensity (photons/second/pixel)                                                       
+TTYPE115= 'fuv_int '           / FUV intensity (photons/second/pixel)      
+TTYPE146= 'nuv_poserr'         / NUV position error in arcseconds                                                               
+TTYPE147= 'fuv_poserr'         / FUV position error in arcseconds                                                             
+TTYPE148= 'ib_poserr'          / Interband position error in arcseconds         
+
