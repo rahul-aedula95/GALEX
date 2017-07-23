@@ -28,17 +28,16 @@ def FileReader(file_list,param_list):
 	row_add = np.zeros(shape=(1,len(param_list)+1))
 
 	for file in file_list:
-		hdulist = fits.open(file)
+		hdulist = fits.open(file,memmap=True)
 		data_in = hdulist[1].data
 		col_add = np.zeros(shape=(len(data_in),1))
-		print np.shape(col_add)
-		print np.shape(data_in)
+		print file
 		for param in param_list:
 			data_now = np.reshape(data_in[param],(len(data_in[param]),1))
 			col_add = np.append(col_add,data_now,axis=1)
 
 		row_add = np.append(row_add,col_add,axis=0)	
-		hdulist.close()
+		del hdulist
 
 	
 	row_add = np.delete(row_add,0,axis=0)
