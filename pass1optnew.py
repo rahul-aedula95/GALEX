@@ -39,7 +39,7 @@ def pass1(i,j):
 	'''
 	#print angle,arcsec," i j ", i , j
 	
-	if arcsec < 5 :
+	if arcsec < 1 :
 	 	return (i,j)
 	else:
 
@@ -48,11 +48,11 @@ def pass1(i,j):
 
 def filewriter(data_f2,data_f3):
 
-	writename = '~/Data/NonDuplicate2.csv'
+	writename = '~/Data/NonDuplicateOpt.csv'
 
 	data_f2.to_csv(writename,sep=',')	
 				
-	writename2 = '~/Data/Duplicate2.csv'
+	writename2 = '~/Data/DuplicateOpt.csv'
 
 	data_f3.to_csv(writename2,sep=',')	
 	
@@ -87,7 +87,7 @@ def data_split(arr):
 
 if __name__ == "__main__":
 
-	filename = '~/Data/test2.csv'
+	filename = '~/Data/OPTDATA.csv'
 	
 	global df 
 
@@ -124,6 +124,3 @@ if __name__ == "__main__":
 	data_frame2 , data_frame3 = data_split(results_i)
 
 	filewriter(data_frame2,data_frame3)
-
-	
-	#print results_i

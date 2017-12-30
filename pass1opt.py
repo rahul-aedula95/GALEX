@@ -48,11 +48,11 @@ def pass1(i,j):
 
 def filewriter(data_f2,data_f3):
 
-	writename = '~/Data/NonDuplicate2.csv'
+	writename = '~/Data/NonDuplicateGG.csv'
 
 	data_f2.to_csv(writename,sep=',')	
 				
-	writename2 = '~/Data/Duplicate2.csv'
+	writename2 = '~/Data/DuplicateGG.csv'
 
 	data_f3.to_csv(writename2,sep=',')	
 	
@@ -82,20 +82,57 @@ def data_split(arr):
 	return (df2,df3)
 
 
+def lisgen(j):
+
+	
+	arr = []
+
+	val = df['dec'][j]
+
+	maxval = val + 5.138889
+
+	minval = val - 5.138889
+
+	for i in xrange(j-1,-1,-1):
+
+		if df['dec'][i] < minval:
+			break
+
+		else:
+
+			arr.append(i)
+
+
+	for i in xrange(j+1,len(df)):
+
+		if df['dec'][i] > maxval:
+			break
+
+		else:
+
+			arr.append(i)
+	
+
+	return arr	
+
 
 
 
 if __name__ == "__main__":
 
-	filename = '~/Data/test2.csv'
+	filename = '~/Data/DATA4.csv'
 	
 	global df 
 
-	df = filereader(filename)
+	#global dfnew
+
+	dfnew = filereader(filename)
+
+	df = dfnew.sort_values('dec')
 	
 	num_cores = multiprocessing.cpu_count()
 	
-	results_i  = Parallel(n_jobs=num_cores, backend="multiprocessing")(delayed(pass1)(i,j) for i in xrange(0,len(df)-1) for j in xrange((i+1),(len(df)))) #xrange((i+1)
+	results_i  = Parallel(n_jobs=num_cores, backend="multiprocessing")(delayed(pass1)(i,j) for i in xrange(0,len(df)-1) for j in lisgen(i)) #xrange((i+1)
 
 	#results2 = way2(data_frame1)
 	#print results_i
@@ -115,6 +152,8 @@ if __name__ == "__main__":
 
 	
 	results_i = np.unique(results_i)
+
+	print results_i
 	#print results_i
 	
 	#print len(results_i)

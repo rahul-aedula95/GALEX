@@ -55,13 +55,13 @@ def degreetocart(data_f1):
 
 
 def xloop(i):
-	c = SkyCoord(ra=df2['alpha_j2000'][i]*u.degree, dec=df2['delta_j2000'][i]*u.degree)
+	c = SkyCoord(ra=df2['ra'][i]*u.degree, dec=df2['dec'][i]*u.degree)
 	#print i
 	val = c.cartesian.x
 	return float(val)
 
 def zloop(i):
-	c = SkyCoord(ra=df2['alpha_j2000'][i]*u.degree, dec=df2['delta_j2000'][i]*u.degree)
+	c = SkyCoord(ra=df2['ra'][i]*u.degree, dec=df2['dec'][i]*u.degree)
 	#print i
 	val = c.cartesian.z
 	return float(val)
@@ -71,14 +71,14 @@ def zloop(i):
 	#print df2['mmm'][i]
 
 def yloop(i):
-	c = SkyCoord(ra=df2['alpha_j2000'][i]*u.degree, dec=df2['delta_j2000'][i]*u.degree)
+	c = SkyCoord(ra=df2['ra'][i]*u.degree, dec=df2['dec'][i]*u.degree)
 	#print i
 	val = c.cartesian.y
 	return float(val)
 
 def filewriter(data_f2):
 
-	writename = '~/Data/DATA2.csv'
+	writename = '~/Data/OPTDATA.csv'
 
 	data_f2.to_csv(writename,sep=',')
 
@@ -90,7 +90,7 @@ def filewriter(data_f2):
 
 if __name__ == "__main__":
 
-	filename = '~/Data/NewDataset3.csv'
+	filename = '~/Data/OptTable.csv'
 	
 	data_frame1 = filereader(filename)
 
